@@ -2,7 +2,7 @@
 
 A single-page web application that manages a collection of books. The application consists of a React frontend and REST API backend.
 
-Application functions as follows:
+# Application functions as follows:
 
 1.Displays a list of the titles and authors of all books that are currently saved in the database.
 
@@ -13,7 +13,7 @@ Application functions as follows:
 4.There is also a delete button that can be used to delete a selected book from the collection.
 
 
-How to install and run thge project:
+# How to install and run thge project:
 
 1.git clone the GitHub root repository.
 
