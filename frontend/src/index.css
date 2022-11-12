@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #d5ddde;
+}
+
+.header-container {
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 6rem;
+  padding: 1rem;
+  background-color:darkslategrey;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem;
+  background-color: #d5ddde;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #d5ddde;
+  font-family: inherit;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  padding-left: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #1b2726;
+  border: none;
+  border-radius: .3rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: .9rem;
+  font-family: inherit;
+}
+
+.btn-addnew {
+  display: inline-block;
+  background-color: darkslategray;
+  color: #d5ddde;
+  border: none;
+  padding: 1rem 2.5rem;
+  margin: 4rem;
+  border-radius: .2rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn-block {
+  display: block;
+  width: 6rem;
+  height: 2rem;
+  width: 100%;
+  align-items: left;
+}
+
+.addnew-line {
+  width: 90%;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  width: 40rem;
+  margin-top: 2rem;
+  height: 4.5rem;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.h2 {
+  color: #1b2726;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h3 {
+  color: #1b2726;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-h3 {
+  color: darkslategray;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-h4 {
+  font-size: .9rem;
+  color: #5A5A5A;
+}
+
+.book-h5 {
+  font-size: 1rem;
+  padding: .5rem;
+  cursor: pointer;
+  text-decoration: underline;
+  
+}
+
+.btn-container {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+.collection-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  margin-bottom: 5rem;
+}
+
+.form-container {
+  margin: .5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.addnew-form-container {
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.addnew-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  height: 2.4rem;
+  padding: 3px 5px;
+  font-size: 15px;
+}
+
+.form-input-description {
+  width: 100%;
+  height: 5rem;
+  padding: 3px 5px;
+  font-size: 15px;
+}
+
+.collection-container {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}

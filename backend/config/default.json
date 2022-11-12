@@ -1,0 +1,9 @@
+{
+    "FullStackTask": {
+      "dbConfig": {
+        "host": "localhost",
+        "port": 5984,
+        "db": "mongodb+srv://fullstacktaskdev:2T8l7Qb8SbZhxgDt@fullstacktaskdb.ql7v3yb.mongodb.net/?retryWrites=true&w=majority"
+      }
+    }
+}
