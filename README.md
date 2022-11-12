@@ -17,11 +17,11 @@ A single-page web application that manages a collection of books. The applicatio
 
 1. git clone the GitHub root repository.
 
-2. cd frontend and npm install required dependencies for the frontend application
+2. cd frontend and npm install the required dependencies for the frontend application
 
-3. cd.. back to the root level of the folder
+3. cd.. back to the root level
 
 4. cd backend and npm install dependencies for the backend application
 
-5. npm start in the backend folder for the applicationtion to start.
+5. npm start in the backend folder for applicationtion to start.
 
