@@ -10,10 +10,6 @@ const UpdateExisting = ({book, onUpdate }) => {
     e.preventDefault();
 
     onUpdate({title, author, description});
-
-    setTitle('');
-    setAuthor('');
-    setDescription('');
   }
 
   return (

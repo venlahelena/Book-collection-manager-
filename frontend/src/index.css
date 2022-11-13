@@ -131,7 +131,12 @@ body {
   padding: .5rem;
   cursor: pointer;
   text-decoration: underline;
-  
+}
+
+.add-label {
+  font-size: 1.1rem;
+  color: #1b2726;
+  font-weight: 800;
 }
 
 .btn-container {

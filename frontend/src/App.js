@@ -7,6 +7,7 @@ import AddNew from './components/AddNew';
 
 const App = () => {
   const [books, setBooks] = useState([]);
+  const [showBook, setShowBook] = useState(false);
 
   /*Get all the book data from server*/
   useEffect(() => {
@@ -68,7 +69,7 @@ const App = () => {
   }catch(error){
     console.log(error.message);
   }
-} 
+}
 
   /*Delete a book from the server*/
   async function deleteBook(_id) {
@@ -81,23 +82,6 @@ const App = () => {
     setBooks(books.filter((book) => book._id !== _id));
   }
 
-
-  /*Show detailed descreption of the selected book*/
-  async function toggleBook(_id) {
-    try{
-    const bookToToggle = await fetchBook(_id)
-    const fetchedBook = {...bookToToggle}
-
-    const response = await axios.get(`http://localhost:5000/books/${_id}`, fetchedBook);
-    return response.data;
-
-  } catch(error) {
-    console.log(error.message);
-  }
-
-    setBooks(books.map((book) => book._id === _id));
-  }
-
   return (
     <>
     <div className='header-container'>
@@ -105,7 +89,7 @@ const App = () => {
     </div>
     <div className='app-container'>
       <AddNew onNew={addNew} />
-      <BookList books={books} onToggle={toggleBook} onDelete={deleteBook} onUpdate={updateExisting}/>
+      <BookList books={books} onDelete={deleteBook} onUpdate={updateExisting}/>
     </div>
     </>
   )

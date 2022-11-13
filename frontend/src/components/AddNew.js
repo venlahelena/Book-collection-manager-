@@ -6,7 +6,6 @@ const AddNew = ({ onNew }) => {
   const [description, setDescription] = useState('');
 
   const onSubmit = (e) => {
-    e.preventDefault();
 
     if(!title || !author || !description)
     {
@@ -29,11 +28,11 @@ const AddNew = ({ onNew }) => {
         <input className="form-input" type="text" placeholder="Add Title" value={title} onChange={(e) => setTitle(e.target.value)}></input>
       </div>
       <div className="addnew-form-container">
-        <label>Author</label>
+        <label className="add-label">Author</label>
         <input className="form-input" type="text" placeholder="Add Author" value={author} onChange={(e) => setAuthor(e.target.value)}></input>
       </div>
       <div className="addnew-form-container">
-        <label>Description</label>
+        <label className="add-label">Description</label>
         <input className="form-input" type="text" placeholder="Add Description" value={description} onChange={(e) => setDescription(e.target.value)}></input>
       </div>
       <input className="btn-addnew" type="Submit" value="Save new" onSubmit={onSubmit}></input>

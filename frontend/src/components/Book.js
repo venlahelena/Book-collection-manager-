@@ -1,4 +1,5 @@
 import UpdateExisting from "./UpdateExisting";
+import Details from "./Details";
 
 const Book = ({ book, showBook, onShow, onDelete, onUpdate}) => {
   return (
@@ -9,7 +10,7 @@ const Book = ({ book, showBook, onShow, onDelete, onUpdate}) => {
       <h4 className='book-h4'> Author: {book.author} </h4>
     </div>
     <div className="collection-buttons-container">
-      <h4 className="book-h5" onClick={onShow}>Details</h4>
+      <Details onShow={onShow} text={showBook ? 'Close details' : 'Details'} />
       <h4 className="book-h5" style={{color: 'red'}} onClick={() => onDelete(book._id)}>Delete</h4>
     </div>
     <div>
