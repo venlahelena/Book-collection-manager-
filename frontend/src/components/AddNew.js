@@ -26,18 +26,15 @@ const AddNew = ({ onNew }) => {
       <h2 className="h2">Add a new Book</h2>
       <div className="addnew-form-container">
         <label className="add-label">Title</label>
-        <input className="form-input" type="text" placeholder="Add Title"
-          value={title} onChange={(e) => setTitle(e.target.value)}></input>
+        <input className="form-input" type="text" placeholder="Add Title" value={title} onChange={(e) => setTitle(e.target.value)}></input>
       </div>
       <div className="addnew-form-container">
         <label>Author</label>
-        <input className="form-input" type="text" placeholder="Add Author"
-          value={author} onChange={(e) => setAuthor(e.target.value)}></input>
+        <input className="form-input" type="text" placeholder="Add Author" value={author} onChange={(e) => setAuthor(e.target.value)}></input>
       </div>
       <div className="addnew-form-container">
         <label>Description</label>
-        <input className="form-input" type="text" placeholder="Add Description"
-          value={description} onChange={(e) => setDescription(e.target.value)}></input>
+        <input className="form-input" type="text" placeholder="Add Description" value={description} onChange={(e) => setDescription(e.target.value)}></input>
       </div>
       <input className="btn-addnew" type="Submit" value="Save new" onSubmit={onSubmit}></input>
     </form>

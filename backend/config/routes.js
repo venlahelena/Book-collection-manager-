@@ -48,7 +48,7 @@ routers.delete('/:Id', async (request, response) => {
 });
 
 /*Updates exisiting book in the database*/
-routers.put('/:Id', async (request, response) => {
+routers.patch('/:Id', async (request, response) => {
     try{
         const updatedBook = await Book.findByIdAndUpdate(request.params.Id, request.body);
         response.json(updatedBook);

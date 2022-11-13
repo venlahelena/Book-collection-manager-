@@ -24,7 +24,7 @@ const App = () => {
   
       return response.data;
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   }
 
@@ -36,46 +36,38 @@ const App = () => {
       console.log(response.data);
       return response.data;
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   }
 
    /*Add new book to the list*/
    async function addNew(book) {
+    const newBook = { title: book.title, author: book.author, description: book.description}
     try {
-    const response = await axios.post("http://localhost:5000/books",
-    {
-      title: book.title,
-      author: book.author,
-      description: book.description
-    })
+    const response = await axios.post("http://localhost:5000/books", newBook)
 
     setBooks([...books, book]);
     
     return response.data;
 
    } catch (error) {
-    console.log(error);
+    console.log(error.message);
    }
   }
 
   /*Update existing book in the server*/
-  async function updateExisting(_id) {
+  async function updateExisting(_id, title, author, description) {
+    const book = await fetchBook(_id)
+    const updatedBook = {...book, title: title, author: author, description: description};
     try {
-   const response = await axios.put(`http://localhost:5000/books/${_id}`, 
-   {
-      title: _id.book.title,
-      author: _id.book.author,
-      description: _id.book.description
-    })
+      const response = await axios.patch(`http://localhost:5000/books/${_id}`, updatedBook);
 
-    setBooks(books.filter((book) => book._id === _id), [...books, _id.book]);
+    setBooks(books.map((book) => book._id === _id ? {...book, title: title, author: author, description: description} : book));
     
-    console.log('Updated' + _id);
     return response.data;
   }catch(error){
-  console.log(error);
-    }
+    console.log(error.message);
+  }
 } 
 
   /*Delete a book from the server*/
@@ -96,18 +88,11 @@ const App = () => {
     const bookToToggle = await fetchBook(_id)
     const fetchedBook = {...bookToToggle}
 
-    const response = await axios.get(`http://localhost:5000/books/${_id}`, {
-      method: 'GET',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(fetchedBook)
-    })
-    console.log(response.data);
+    const response = await axios.get(`http://localhost:5000/books/${_id}`, fetchedBook);
     return response.data;
 
   } catch(error) {
-    console.log(error);
+    console.log(error.message);
   }
 
     setBooks(books.map((book) => book._id === _id));
