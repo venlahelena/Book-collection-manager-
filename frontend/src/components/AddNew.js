@@ -37,7 +37,7 @@ const AddNew = ({ onNew }) => {
         <label className="add-label">Description</label>
         <input className="form-input" type="text" placeholder="Add Description" value={description} onChange={(e) => setDescription(e.target.value)}></input>
       </div>
-      <input className="btn-addnew" type="Submit" value="Save new" onSubmit={onSubmit}></input>
+      <input className="btn-addnew" type="Submit" defaultValue="Add new" onSubmit={onSubmit}></input>
     </form>
     <div className='addnew-line'>
       <hr></hr>

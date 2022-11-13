@@ -3,12 +3,11 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const cors = require('cors');
 
+/*Import .env file configurations for db connecntion*/
+require("dotenv").config();
+
+
 const app = express();
-
-
-/*Database cinfigurations*/
-const config = require('config');
-const dbConfig = config.get('FullStackTask.dbConfig.db');
 
 /*Middleware*/
 app.use(bodyParser.json());
@@ -25,7 +24,7 @@ app.get('/', (request, response) => {
 });
 
 /*Connect to database MongoBD*/
-mongoose.connect(dbConfig, {
+mongoose.connect(process.env.MONGO_DB_URI , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {

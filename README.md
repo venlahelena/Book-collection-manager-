@@ -15,13 +15,15 @@ A single-page web application that manages a collection of books. The applicatio
 
 # How to install and run the project:
 
-1. git clone the GitHub root repository.
+1. Git clone the GitHub root repository.
 
-2. cd frontend and npm install the required dependencies for the frontend application
+2. Go to the frontend folder and npm install the required dependencies for the frontend application
 
-3. cd.. back to the root level
+4. Go to the backend folder  and npm install dependencies for the backend application
 
-4. cd backend and npm install dependencies for the backend application
+5. In backend folder change .env.example file as .env file
 
-5. npm start in the backend folder for applicationtion to start.
+4. Inside .env file change the 'Your mongo db uri' string to match your mongo database connection.
+
+6. npm start in the backend folder for applicationtion to start.
 

@@ -32,7 +32,7 @@ const UpdateExisting = ({book, onUpdate }) => {
         <label>Description</label>
         <input key={book._id} className="form-input" type="text" value={description} onChange={(e) => setDescription(e.target.value)}></input>
       </div>
-      <input className="btn btn-block" type="Submit" value="Update" onClick={() => onUpdate(book._id, title, author, description)}></input>
+      <input className="btn btn-block" type="Submit" defaultValue="Update book" onClick={() => onUpdate(book._id, title, author, description)}></input>
     </form>
     </>
   )
