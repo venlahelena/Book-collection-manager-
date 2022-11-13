@@ -34,7 +34,6 @@ const App = () => {
     try {
       const response = await axios.get(`http://localhost:5000/books/${_id}`);
   
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error.message);
@@ -50,7 +49,6 @@ const App = () => {
     setBooks([...books, book]);
     
     return response.data;
-
    } catch (error) {
     console.log(error.message);
    }
@@ -73,13 +71,16 @@ const App = () => {
 
   /*Delete a book from the server*/
   async function deleteBook(_id) {
-    await axios.delete(`http://localhost:5000/books/${_id}`, {
-      method: 'DELETE',
-    })
+    try{
+    const response = await axios.delete(`http://localhost:5000/books/${_id}`);
 
-    console.log('Deleted', _id);
-
+    alert('Book has been now deleted');
     setBooks(books.filter((book) => book._id !== _id));
+
+    return response.data;
+    }catch(error){
+      console.log(error.message);
+    }
   }
 
   return (

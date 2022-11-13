@@ -17,6 +17,8 @@ const AddNew = ({ onNew }) => {
     setTitle('');
     setAuthor('');
     setDescription('');
+
+    alert('New book has been added');
   }
 
   return (
