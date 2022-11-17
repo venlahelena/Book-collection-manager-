@@ -6,14 +6,21 @@ const BookList = ({books, onDelete, onUpdate}) => {
 
   return (
     <>
-    <h2 className='h2' style={{marginTop: '2rem'}}>Book List</h2>
-        {
-        books.map((book) => (
-          <Book key={book._id} book={book} onShow={() => setShowBook(!showBook)} showBook={showBook} onDelete={onDelete} onUpdate={onUpdate}/>
-        ))
-        }
+      <h2 className="h2" style={{ marginTop: "2rem" }}>
+        Book List
+      </h2>
+      {books.map((book) => (
+        <Book
+          key={book._id}
+          book={book}
+          onShow={() => setShowBook(!showBook)}
+          showBook={showBook}
+          onDelete={onDelete}
+          onUpdate={onUpdate}
+        />
+      ))}
     </>
-  )
+  );
 }
 
 export default BookList

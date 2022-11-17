@@ -7,7 +7,6 @@ import AddNew from './components/AddNew';
 
 const App = () => {
   const [books, setBooks] = useState([]);
-  const [showBook, setShowBook] = useState(false);
 
   /*Get all the book data from server*/
   useEffect(() => {
@@ -85,15 +84,19 @@ const App = () => {
 
   return (
     <>
-    <div className='header-container'>
-      <Header/>
-    </div>
-    <div className='app-container'>
-      <AddNew onNew={addNew} />
-      <BookList books={books} onDelete={deleteBook} onUpdate={updateExisting}/>
-    </div>
+      <div className="header-container">
+        <Header />
+      </div>
+      <div className="app-container">
+        <AddNew onNew={addNew} />
+        <BookList
+          books={books}
+          onDelete={deleteBook}
+          onUpdate={updateExisting}
+        />
+      </div>
     </>
-  )
+  );
 }
 
 export default App;
