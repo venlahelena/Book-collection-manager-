@@ -1,38 +1,37 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 const cors = require('cors');
-
-/*Import .env file configurations for db connecntion*/
-require("dotenv").config();
-
+const connectDB = require('./config/db');
 
 const app = express();
 
-/*Middleware*/
+/* Middleware */
 app.use(bodyParser.json());
 app.use(cors());
 
-/*Importing routes*/
-const routes = require('./config/routes');
+/* Importing routes */
+const bookRoutes = require('./routes/bookRoutes');
+const getBookById = require('./routes/getBookById');
+const addBook = require('./routes/addBook');
+const deleteBook = require('./routes/deleteBook');
+const updateBook = require('./routes/updateBook');
 
-app.use('/books', routes);
+app.use('/books', bookRoutes);
+app.use('/books', getBookById);
+app.use('/books', addBook);
+app.use('/books', deleteBook);
+app.use('/books', updateBook);
 
-/*Routes*/
+/* Routes */
 app.get('/', (request, response) => {
-    response.send("Home page");
+  response.send('Home page');
 });
 
-/*Connect to database MongoBD*/
-mongoose.connect(process.env.MONGO_DB_URI , {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
-    console.log("Connected to MongoDB")
-}).catch(error => {
-    console.log("Cannot connect to MongoDB"+error)
+/* Connect to MongoDB database */
+connectDB();
+
+/* Server that application is listening */
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
-
-/*Server that application is listening*/
-app.listen(5000);
-
