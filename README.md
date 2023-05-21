@@ -1,4 +1,4 @@
-# Book-collection-manager
+# Book Collection Manager
 
 A single-page web application that manages a collection of books. The application consists of a React frontend and REST API backend.
 
