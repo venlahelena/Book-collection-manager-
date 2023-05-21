@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import 'tailwindcss/tailwind.css';
 
 const AddNew = ({ onNew }) => {
   const [title, setTitle] = useState('');
@@ -6,67 +7,62 @@ const AddNew = ({ onNew }) => {
   const [description, setDescription] = useState('');
 
   const onSubmit = (e) => {
+    e.preventDefault();
 
-    if(!title || !author || !description)
-    {
+    if (!title || !author || !description) {
       alert('All fields must be filled');
       return;
     }
-    
-    onNew({title, author, description});
+
+    onNew({ title, author, description });
     setTitle('');
     setAuthor('');
     setDescription('');
 
     alert('New book has been added');
-  }
+  };
 
   return (
     <>
       <form className="addnew-form" onSubmit={onSubmit}>
-        <h2 className="h2">Add a new Book</h2>
-        <div className="addnew-form-container">
-          <label className="add-label">Title</label>
+        <h2 className="text-2xl font-semibold">Add a new Book</h2>
+        <div className="space-y-2 mb-4">
+          <label className="font-bold">Title</label>
           <input
             className="form-input"
             type="text"
             placeholder="Add Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-          ></input>
+          />
         </div>
-        <div className="addnew-form-container">
-          <label className="add-label">Author</label>
+        <div className="space-y-2 mb-4">
+          <label className="font-bold">Author</label>
           <input
             className="form-input"
             type="text"
             placeholder="Add Author"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
-          ></input>
+          />
         </div>
-        <div className="addnew-form-container">
-          <label className="add-label">Description</label>
+        <div className="space-y-2 mb-4">
+          <label className="font-bold">Description</label>
           <input
             className="form-input"
             type="text"
             placeholder="Add Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          ></input>
+          />
         </div>
-        <input
-          className="btn-addnew"
-          type="Submit"
-          defaultValue="Add new"
-          onSubmit={onSubmit}
-        ></input>
+        <button className="bg-darkslategray-500 text-white py-2 px-4 rounded-full mt-8" type="submit">
+          Add new
+        </button>
       </form>
-      <div className="addnew-line">
-        <hr></hr>
-      </div>
+      <hr className="my-8" />
     </>
   );
-}
+};
 
-export default AddNew
+export default AddNew;
