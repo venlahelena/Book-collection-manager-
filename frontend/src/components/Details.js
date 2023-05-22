@@ -8,4 +8,4 @@ Details.defaultProps = {
   text: 'Details'
 }
 
-export default Details
+export default Details;

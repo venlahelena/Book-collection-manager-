@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import 'tailwindcss/tailwind.css';
 
 const AddNew = ({ onNew }) => {
   const [title, setTitle] = useState('');
@@ -25,9 +24,9 @@ const AddNew = ({ onNew }) => {
   return (
     <>
       <form className="addnew-form" onSubmit={onSubmit}>
-        <h2 className="text-2xl font-semibold">Add a new Book</h2>
-        <div className="space-y-2 mb-4">
-          <label className="font-bold">Title</label>
+        <h2 className="h2">Add a new Book</h2>
+        <div className="addnew-form-container">
+          <label className="add-label">Title</label>
           <input
             className="form-input"
             type="text"
@@ -36,8 +35,8 @@ const AddNew = ({ onNew }) => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="space-y-2 mb-4">
-          <label className="font-bold">Author</label>
+        <div className="addnew-form-container">
+          <label className="add-label">Author</label>
           <input
             className="form-input"
             type="text"
@@ -46,8 +45,8 @@ const AddNew = ({ onNew }) => {
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
-        <div className="space-y-2 mb-4">
-          <label className="font-bold">Description</label>
+        <div className="addnew-form-container">
+          <label className="add-label">Description</label>
           <input
             className="form-input"
             type="text"
@@ -56,11 +55,11 @@ const AddNew = ({ onNew }) => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <button className="bg-darkslategray-500 text-white py-2 px-4 rounded-full mt-8" type="submit">
+        <button className="btn-addnew" type="submit">
           Add new
         </button>
       </form>
-      <hr className="my-8" />
+      <hr className="addnew-line" />
     </>
   );
 };
