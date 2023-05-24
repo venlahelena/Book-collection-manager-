@@ -4,10 +4,11 @@ const Book = require("../models/Book");
 const router = express.Router();
 
 /* Add a new book to the database */
-router.get("/", async (request, response) => {
+router.post("/", async (request, response) => {
   try {
-    const books = await Book.find();
-    response.json(books);
+    const newBook = new Book(request.body);
+    const savedBook = await newBook.save();
+    response.json(savedBook);
   } catch (error) {
     response.json({ message: error });
   }

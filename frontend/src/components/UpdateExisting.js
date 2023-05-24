@@ -1,7 +1,6 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
 
-const UpdateExisting = ({book, onUpdate }) => {
-
+const UpdateExisting = ({ book, onUpdate, onDelete }) => {
   const [title, setTitle] = useState(book.title);
   const [author, setAuthor] = useState(book.author);
   const [description, setDescription] = useState(book.description);
@@ -9,21 +8,16 @@ const UpdateExisting = ({book, onUpdate }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    onUpdate({title, author, description});
-  }
+    onUpdate({ title, author, description });
+  };
+
+  const handleDelete = () => {
+    onDelete(book._id);
+  };
 
   return (
     <>
       <form className="form" onSubmit={onSubmit}>
-        <div className="form-container">
-          <label>Description</label>
-          <textarea
-            key={book._id}
-            className="form-input-description"
-            type="text"
-            placeholder={book.description}
-          ></textarea>
-        </div>
         <h3 className="h3">Update the book {book.title}</h3>
         <div className="form-container">
           <label>Title</label>
@@ -61,9 +55,12 @@ const UpdateExisting = ({book, onUpdate }) => {
           defaultValue="Update book"
           onClick={() => onUpdate(book._id, title, author, description)}
         ></input>
+        <button className="btn btn-block" onClick={handleDelete}>
+          Delete
+        </button>
       </form>
     </>
   );
-}
+};
 
-export default UpdateExisting
+export default UpdateExisting;

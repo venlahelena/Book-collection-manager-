@@ -1,30 +1,30 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const AddNew = ({ onNew }) => {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [description, setDescription] = useState('');
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [description, setDescription] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     if (!title || !author || !description) {
-      alert('All fields must be filled');
+      alert("All fields must be filled");
       return;
     }
 
     onNew({ title, author, description });
-    setTitle('');
-    setAuthor('');
-    setDescription('');
+    setTitle("");
+    setAuthor("");
+    setDescription("");
 
-    alert('New book has been added');
+    alert("New book has been added");
   };
 
   return (
     <>
+      <h2 className="h2">Add a new Book to Book Collection</h2>
       <form className="addnew-form" onSubmit={onSubmit}>
-        <h2 className="h2">Add a new Book</h2>
         <div className="addnew-form-container">
           <label className="add-label">Title</label>
           <input
@@ -55,10 +55,12 @@ const AddNew = ({ onNew }) => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <button className="btn-addnew" type="submit">
+      </form>
+      <div className="btn-container">
+        <button className="btn-addnew" type="submit" onClick={onSubmit}>
           Add new
         </button>
-      </form>
+      </div>
       <hr className="addnew-line" />
     </>
   );

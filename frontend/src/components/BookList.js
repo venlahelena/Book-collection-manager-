@@ -6,7 +6,7 @@ const BookList = ({books, onDelete, onUpdate}) => {
 
   return (
     <>
-      <h2 className="h2" style={{ marginTop: "2rem" }}>
+      <h2 className="h2">
         Book List
       </h2>
       {books.map((book) => (

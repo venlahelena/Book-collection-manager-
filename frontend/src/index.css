@@ -19,14 +19,12 @@ body {
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
   padding: 1rem;
   background-color:darkslategrey;
 }
 
 .app-container {
-  display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   margin: 2rem;
@@ -62,9 +60,10 @@ body {
   background-color: darkslategray;
   color: #d5ddde;
   border: none;
+  width: 30%;
   padding: 1rem 2.5rem;
   margin: 4rem;
-  border-radius: .2rem;
+  border-radius: .5rem;
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
@@ -88,19 +87,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background: #fff;
-  width: 40rem;
+  width: 45rem;
   margin-top: 2rem;
-  height: 4.5rem;
+  height: 10rem;
   padding: 1rem;
   border-radius: .5rem;
 }
 
 .h2 {
+  display: flex;
   color: #1b2726;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: .8rem;
 }
 
 .h3 {
@@ -112,17 +113,19 @@ body {
   justify-content: space-between;
 }
 
+.book h3,
+.book h4 {
+  margin: 0;
+}
+
 .book-h3 {
   color: darkslategray;
-  display: flex;
+  font-size: 1.3rem;
   text-transform: uppercase;
-  font-size: 1.5rem;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .book-h4 {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #5A5A5A;
 }
 
@@ -140,14 +143,19 @@ body {
 }
 
 .btn-container {
-  display: flex;
-  align-items: left;
-  justify-content: left;
+  
 }
 
 .collection-buttons-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: .6rem 0rem 0rem 0rem;
+}
+
+.UpdateExisting {
+  align-self: flex-end;
+  margin-top: 2rem;
 }
 
 .form {
@@ -162,13 +170,12 @@ body {
 
 .addnew-form-container {
   justify-content: space-between;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .addnew-form {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: center;
 }
 
 .form-control label {
@@ -179,7 +186,9 @@ body {
   width: 100%;
   height: 2.4rem;
   padding: 3px 5px;
-  font-size: 15px;
+  border: 1px solid lightgray;
+  border-radius: .2rem;
+  margin-top: .5rem;
 }
 
 .form-input-description {
@@ -191,10 +200,41 @@ body {
 
 .collection-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 footer {
   margin-top: 30px;
   text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.book p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-line;
+  margin-top: 0.5rem 0;
+  color:#5A5A5A;
+  font-size: .95rem;
+}
+
+.book-title-author {
+  display: flex;
+  justify-content: space-between;
+}
+
+.update-existing-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30rem; /* Adjust the width as needed */
+  background-color: #fff;
+  padding: 1rem;
+  z-index: 9999;
 }
