@@ -6,13 +6,16 @@
   padding: 0;
 }
 
+:root {
+  --main-color: #1b2726;
+  --secondary-color: #d5ddde;
+}
+
 body {
-  font-family: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Karla", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d5ddde;
+  background-color: var(--secondary-color);
 }
 
 .header-container {
@@ -21,136 +24,63 @@ body {
   margin-left: auto;
   margin-bottom: 5rem;
   padding: 1rem;
-  background-color:darkslategrey;
 }
 
 .app-container {
   justify-content: space-around;
   align-items: center;
   margin: 2rem;
-  background-color: #d5ddde;
+  background-color: var(--secondary-color);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #d5ddde;
-  font-family: inherit;
+  color: var(--main-color);
+  font-family: Abel;
   margin-top: 4rem;
   margin-bottom: 2rem;
-  font-size: 1.8rem;
-  padding-left: 30px;
+  font-size: 1.9rem;
+  padding-left: 2rem;
 }
 
 .btn {
   display: inline-block;
   background-color: #fff;
-  color: #1b2726;
+  color: var(--main-color);
   border: none;
-  border-radius: .1rem;
+  border-radius: 0.1rem;
   cursor: pointer;
   text-decoration: none;
-  font-size: .9rem;
-  font-family: inherit;
-}
-
-.btn-addnew {
-  display: inline-block;
-  background-color: darkslategray;
-  color: #d5ddde;
-  border: none;
-  width: 30%;
-  padding: 1rem 2.5rem;
-  margin: 4rem;
-  border-radius: .5rem;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
+  font-size: 0.9rem;
   font-family: inherit;
 }
 
 .btn-block {
   display: block;
-  width: 6rem;
-  height: 2rem;
   width: 100%;
+  height: 2rem;
   align-items: left;
-}
-
-.addnew-line {
-  width: 90%;
-}
-
-.book {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: #fff;
-  width: 45rem;
-  margin-top: 2rem;
-  height: 10rem;
-  padding: 1rem;
-  border-radius: .5rem;
 }
 
 .h2 {
   display: flex;
-  color: #1b2726;
-  font-size: 1.5rem;
-  text-transform: uppercase;
+  color: var(--main-color);
+  font-size: 2rem;
   align-items: center;
   justify-content: center;
-  margin-top: .8rem;
+  margin-top: 2rem;
+  font-weight: 400;
 }
 
 .h3 {
-  color: #1b2726;
+  color: var(--main-color);
   font-size: 1.2rem;
   margin-top: 1rem;
   text-transform: uppercase;
   align-items: center;
   justify-content: space-between;
-}
-
-.book h3,
-.book h4 {
-  margin: 0;
-}
-
-.book-h3 {
-  color: darkslategray;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-}
-
-.book-h4 {
-  font-size: 0.9rem;
-  color: #5A5A5A;
-}
-
-.book-h5 {
-  font-size: 1rem;
-  padding: .5rem;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.add-label {
-  font-size: 1.1rem;
-  color: #1b2726;
-  font-weight: 800;
-}
-
-.btn-container {
-  
-}
-
-.collection-buttons-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin: .6rem 0rem 0rem 0rem;
 }
 
 .UpdateExisting {
@@ -162,46 +92,15 @@ body {
   margin-bottom: 5rem;
 }
 
-.form-container {
-  margin: .5rem 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.addnew-form-container {
-  justify-content: space-between;
-  padding: 2rem;
-}
-
-.addnew-form {
-  display: flex;
-  justify-content: center;
-}
-
 .form-control label {
   display: block;
-}
-
-.form-input {
-  width: 100%;
-  height: 2.4rem;
-  padding: 3px 5px;
-  border: 1px solid lightgray;
-  border-radius: .2rem;
-  margin-top: .5rem;
 }
 
 .form-input-description {
   width: 100%;
   height: 5rem;
   padding: 3px 5px;
-  font-size: 15px;
-}
-
-.collection-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  font-size: 1rem;
 }
 
 footer {
@@ -214,27 +113,29 @@ footer {
   justify-content: center;
 }
 
-.book p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: pre-line;
-  margin-top: 0.5rem 0;
-  color:#5A5A5A;
-  font-size: .95rem;
+.btn-update {
+  display: inline-block;
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 0.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  margin: 1rem 1rem 1rem 0;
 }
 
-.book-title-author {
-  display: flex;
-  justify-content: space-between;
-}
-
-.update-existing-popup {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 30rem; /* Adjust the width as needed */
-  background-color: #fff;
-  padding: 1rem;
-  z-index: 9999;
+.btn-delete {
+  display: inline-block;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 0.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
 }

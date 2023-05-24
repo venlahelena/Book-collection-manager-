@@ -1,0 +1,109 @@
+.collection-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 8rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  width: 45rem;
+  margin-top: 2rem;
+  height: 10rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.booklist-h2 {
+  display: flex;
+  color: #1b2726;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  font-weight: 400;
+}
+
+.book h3,
+.book h4 {
+  margin: 0;
+}
+
+.book-h3 {
+  color: darkslategray;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.book-h4 {
+  font-size: 0.9rem;
+  color: #5a5a5a;
+}
+
+.book-h5 {
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.collection-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0.6rem 0rem 0rem 0rem;
+}
+
+.book p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-line;
+  padding-top: .5rem;
+  color: #5a5a5a;
+  font-size: 0.95rem;
+}
+
+.book-title-author {
+  display: flex;
+  justify-content: space-between;
+}
+
+.update-existing-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30rem; /* Adjust the width as needed */
+  background-color: #fff;
+  padding: 1rem;
+  z-index: 9999;
+}
+
+.btn-update {
+  display: inline-block;
+  background-color: darkslategray;
+  color: #fff;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+
+.btn-close {
+  display: inline-block;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+}

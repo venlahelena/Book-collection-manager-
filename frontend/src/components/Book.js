@@ -2,6 +2,8 @@ import { useState } from "react";
 import UpdateExisting from "./UpdateExisting";
 import Details from "./Details";
 
+import "../styles/Book.css";
+
 const Book = ({ book, onDelete, onUpdate }) => {
   const [showBook, setShowBook] = useState(false);
 
@@ -16,11 +18,13 @@ const Book = ({ book, onDelete, onUpdate }) => {
           <p>{book.description}</p>
         </div>
         <div className="collection-buttons-container">
-            <Details
-              onShow={() => setShowBook(!showBook)}
-              text={showBook ? "Close" : "Update book information"}
-            />
-          </div>
+          <Details
+            onShow={() => setShowBook(!showBook)}
+            showText={!showBook}
+            buttonText={showBook ? "Close" : "Update book information"}
+            buttonClassName={showBook ? "btn btn-close" : "btn btn-update"}
+          />
+        </div>
       </div>
       {showBook && (
         <div className="update-existing-popup">

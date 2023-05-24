@@ -1,0 +1,49 @@
+.addnew-form {
+  display: flex;
+  justify-content: center;
+}
+
+.addnew-form-container {
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.add-label {
+  font-size: 1.1rem;
+  color: #1b2726;
+  font-weight: 800;
+}
+
+.btn-addnew {
+  display: inline-block;
+  background-color: darkslategray;
+  color: #d5ddde;
+  border: none;
+  width: 15%;
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem; /* Changed to relative unit */
+  font-family: inherit;
+  transition: background-color 0.3s ease;
+}
+
+.addnew-line {
+  width: 90%;
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 1rem auto;
+}
+
+.form-input {
+  width: 100%;
+  height: 2.4rem;
+  padding: 0.2rem 0.5rem; /* Changed to relative units */
+  border: 1px solid lightgray;
+  border-radius: 0.2rem;
+  margin-top: 0.5rem;
+}

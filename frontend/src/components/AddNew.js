@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../styles/AddNew.css';
 
 const AddNew = ({ onNew }) => {
   const [title, setTitle] = useState("");
@@ -23,6 +24,7 @@ const AddNew = ({ onNew }) => {
 
   return (
     <>
+    <hr className="addnew-line" />
       <h2 className="h2">Add a new Book to Book Collection</h2>
       <form className="addnew-form" onSubmit={onSubmit}>
         <div className="addnew-form-container">

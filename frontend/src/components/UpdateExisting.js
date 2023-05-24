@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+
+import "../styles/UpdateExisting.css";
 
 const UpdateExisting = ({ book, onUpdate, onDelete }) => {
   const [title, setTitle] = useState(book.title);
@@ -7,7 +9,6 @@ const UpdateExisting = ({ book, onUpdate, onDelete }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
     onUpdate({ title, author, description });
   };
 
@@ -41,21 +42,21 @@ const UpdateExisting = ({ book, onUpdate, onDelete }) => {
         </div>
         <div className="form-container">
           <label>Description</label>
-          <input
+          <textarea
             key={book._id}
             className="form-input"
-            type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          ></input>
+          ></textarea>
         </div>
         <input
-          className="btn btn-block"
+          className="btn btn-block btn-update"
           type="Submit"
           defaultValue="Update book"
           onClick={() => onUpdate(book._id, title, author, description)}
-        ></input>
-        <button className="btn btn-block" onClick={handleDelete}>
+        />
+
+        <button className="btn btn-block btn-delete" onClick={handleDelete}>
           Delete
         </button>
       </form>

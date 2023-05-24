@@ -1,11 +1,11 @@
-const Details = ({onShow, text}) => {
-  return (
-    <h4 className="book-h5" onClick={onShow}>{text}</h4>
-  )
-}
+import React from "react";
 
-Details.defaultProps = {
-  text: 'Details'
-}
+const Details = ({ onShow, buttonText, buttonClassName }) => {
+  return (
+    <div>
+      <button className={buttonClassName} onClick={onShow}>{buttonText}</button>
+    </div>
+  );
+};
 
 export default Details;
